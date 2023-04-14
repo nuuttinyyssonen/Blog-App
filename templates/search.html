@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/posts.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        {% for post in blogPost %}
+            <div class="box-container">
+                <h3>{{ post.title }}</h3>
+                <h3 class="post">{{ post.post }}</h3>
+                <p>See the full post <a href="posts/{{ post.id }}">here</a></p>
+                <br>
+            </div>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>

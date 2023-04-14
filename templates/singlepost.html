@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/singlepost.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="navbar">
+        <a class="navbarElement" href="{{ url_for('blog') }}">Write a blog</a>
+        <a class="navbarElement" href="{{ url_for('posts') }}">Posts</a>
+        <a class="navbarElement" href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <div class="container">
+        {% for text in post%}
+            <h1 class="title">{{ text.title }}</h1>
+            <p class="text">{{ text.post }}</p>
+            <p class="author">{{ text.author }}</p>
+            <form action="/posts/{{id}}" method="post">
+                <button type="submit" name="delete" class="deletePost">Delete Post</button>
+            </form>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
