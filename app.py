@@ -8,17 +8,17 @@ from flask_wtf import FlaskForm
 from wtforms import BooleanField
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
 from flask_mail import Mail, Message
-from decouple import Config
+from decouple import config
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = Config('SECRET_KEY')
+app.config['SECRET_KEY'] = config('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blog.db'
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'nuutti.project@gmail.com'
-app.config['MAIL_PASSWORD'] = Config('MAIL_PASSWORD')
+app.config['MAIL_PASSWORD'] = config('MAIL_PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = 'nuutti.project@gmail.com'
 app.config['MAIL_MAX_EMAILS'] = None
 app.config['MAIL_ASCII_ATTACHMENTS'] = False
