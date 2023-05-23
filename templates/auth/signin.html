@@ -12,7 +12,7 @@
     <div class="container">
         <h1><strong>Become a member here</strong></h1>
         <p>Join for free to share your interests</p>
-        <form action="/signin" method="post">
+        <form action="/signup" method="post">
             <input class="email" type="email" name="email" placeholder="Email"/>
             <br>
             <input class="username" type="text" name="username" placeholder="Username"/>
@@ -20,7 +20,7 @@
             <input class="password" type="password" name="password" placeholder="Password"/>
             <br>
             <input type="password" name="password2" placeholder="Repeat password"/>
-            <p>Already a member? Log in <a href="{{ url_for('login') }}">Here</a></p>
+            <p>Already a member? Log in <a href="{{ url_for('login_bp.login') }}">Here</a></p>
             <button class="submit" type="submit">Sign in</button>
         </form>
     </div>

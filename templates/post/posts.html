@@ -11,9 +11,9 @@
 </head>
 <body>
     <div class="navbar">
-        <a class="navbarElement" href="{{ url_for('blog') }}">Write a blog</a>
-        <a class="navbarElement" href="{{ url_for('posts') }}">Posts</a>
-        <a class="navbarElement" href="{{ url_for('logout') }}">Logout</a>
+        <a class="navbarElement" href="{{ url_for('blog_bp.blog') }}">Write a blog</a>
+        <a class="navbarElement" href="{{ url_for('posts_bp.posts') }}">Posts</a>
+        <a class="navbarElement" href="{{ url_for('logout_bp.logout') }}">Logout</a>
         <form class="searchBar" action="/posts/" method="post">
             <input name="search" class="search"/>
             <button name="searchBtn" type="submit"><i class="fa fa-search"></i></button>
